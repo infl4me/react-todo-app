@@ -8,7 +8,7 @@ export default class TodoList extends Component {
     const elements = items.map(item => <TodoListItem { ...item } />)
 
     return (
-      <ul>
+      <ul className="list-group mt-3">
         {elements}
       </ul>
     );
