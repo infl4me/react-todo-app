@@ -1,12 +1,11 @@
-develop:
+start:
 	npm start
 
 install:
 	npm install
 
 build:
-	# rm -rf dist
-	# NODE_ENV=production npx webpack
+	npm run build
 
 test:
 	npm test
@@ -14,5 +13,5 @@ test:
 lint:
 	npx eslint .
 
-deploy: build
-	surge ./dist rssreader.surge.sh
+deploy:
+	npm run deploy
