@@ -3,24 +3,26 @@ import cn from 'classnames';
 import './item-status-filter.css';
 
 export default class ItemStatusFilter extends Component {
-  getClasses = (type) => {
-    const { state } = this.props;
-    return cn({
-      'btn': true,
-      'btn-primary': state === type,
-      'btn-outline-secondary': state !== type,
-    })
-  };
+  filters = [{ name: 'all', value: 'All' }, { name: 'active', value: 'Active' }, { name: 'done', value: 'Done' },]
 
   render() {
-    const { toggleState } = this.props;
-
+    const { toggleState, state } = this.props;
+    const buttons = this.filters.map(({ name, value }) => {
+      const isActive = name === state;
+      const classes = cn({
+        'btn': true,
+        'btn-primary': isActive,
+        'btn-outline-secondary': !isActive,
+      });
+      return (
+        <button key={name}
+                type="button"
+                onClick={toggleState(name)}
+                className={classes}>{value}</button>
+      );
+    });
     return (
-      <div className="btn-group" role="group" aria-label="Basic example">
-        <button type="button" onClick={toggleState('all')} className={this.getClasses('all')}>All</button>
-        <button type="button" onClick={toggleState('active')} className={this.getClasses('active')}>Active</button>
-        <button type="button" onClick={toggleState('done')} className={this.getClasses('done')}>Done</button>
-      </div>
+      <div className="btn-group">{buttons}</div>
     );
   }
 }

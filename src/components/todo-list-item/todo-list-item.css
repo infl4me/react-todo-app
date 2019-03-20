@@ -5,17 +5,25 @@
 
 .todo-list-text {
   cursor: pointer;
+  word-break: break-all;
 }
 
 .todo-list-text--important {
-  color: royalblue;
+  color: darkblue;
+  font-weight: bold;
 }
 
 .todo-list-text--finished {
   text-decoration: line-through;
 }
 
-.todo-list-item-btns button {
+.todo-list-item__btns {
+  justify-content: space-between;
+  width: 67px;
+  margin-left: 10px;
+}
+
+.todo-list-item__btns button {
   width: 31px;
   height: 31px;
 }

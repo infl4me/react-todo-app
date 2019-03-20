@@ -77,7 +77,7 @@ export default class App extends Component {
     const items = filterState === 'all' ? todoData : todoData.filter(item => this.filterMap[filterState](item));
     
     const filterStringLength = filterString.length;
-    const items2 = filterStringLength === 0 ? items : items.filter(({label}) => filterString === label.slice(0, filterStringLength).toLowerCase());
+    const items2 = filterStringLength === 0 ? items : items.filter(({label}) => label.toLowerCase().indexOf(filterString) > -1);
 
     return (
       <div className="todo-app">

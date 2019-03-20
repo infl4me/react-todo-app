@@ -14,7 +14,7 @@ export default class TodoListItem extends Component {
     return (
       <li className="list-group-item d-flex todo-list-item">
         <span onClick={toggleState(id, 'done')} className={textClasses}>{label}</span>
-        <div className="todo-list-item-btns">
+        <div className="todo-list-item__btns d-flex">
           <button onClick={deleteItem(id)} className="btn btn-outline-danger btn-sm mr-2">
             <span className="fa fa-trash-o"></span>
           </button>
