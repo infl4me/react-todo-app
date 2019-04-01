@@ -4,7 +4,6 @@
 }
 
 .todo-list-text {
-  cursor: pointer;
   word-break: break-all;
 }
 
@@ -26,4 +25,18 @@
 .todo-list-item__btns button {
   width: 31px;
   height: 31px;
+}
+
+.todo-list-item__btn {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: box-shadow .15s;
+}
+
+.todo-list-item__btn:focus {
+  outline: none;
+  box-shadow: 0px 3px 0 0rem rgba(0,123,255,.25);
 }

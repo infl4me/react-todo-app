@@ -11,7 +11,7 @@ export default class SearchPanel extends Component {
   render() {
     return (
       <div className="search-panel mr-2">
-        <input onChange={this.onChange} className="form-control" type="text" placeholder="Type to search"/>
+        <input onChange={this.onChange} className="form-control" type="text" placeholder="Type to search" />
       </div>
     );
   }

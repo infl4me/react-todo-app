@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TodoListItem from '../todo-list-item';
 
-export default class TodoList extends Component {
+const TodoList = ({ items, ...handlers }) => {
+  const elements = items.map(item => <TodoListItem key={item.id} {...item} {...handlers} />);
 
-  render() {
-    const { items, ...handlers } = this.props;
-    const elements = items.map(item => <TodoListItem key={item.id} { ...item } { ...handlers } />)
+  return (
+    <ul className="list-group mt-3">
+      {elements}
+    </ul>
+  );
+};
 
-    return (
-      <ul className="list-group mt-3">
-        {elements}
-      </ul>
-    );
-  }
-}
+export default TodoList;

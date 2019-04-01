@@ -1,16 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SearchPanel from '../search-panel';
 import ItemStatusFilter from '../item-status-filter';
 
-export default class TodoFilter extends Component {
-  render() {
-    const { toggleFilterState, state, updateFilter } = this.props;
+const TodoFilter = ({ toggleFilterState, state, updateFilter }) => (
+  <div className="d-flex mt-3">
+    <SearchPanel updateFilter={updateFilter} />
+    <ItemStatusFilter state={state} toggleState={toggleFilterState} />
+  </div>
+);
 
-    return (
-      <div className="d-flex mt-3">
-        <SearchPanel updateFilter={updateFilter}/>
-        <ItemStatusFilter state={state} toggleState={toggleFilterState}/>
-      </div>
-    );
-  }
-}
+export default TodoFilter;

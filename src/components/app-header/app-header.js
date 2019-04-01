@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './app-header.css';
 
-export default class AppHeader extends Component {
+const AppHeader = ({ active, finished }) => {
+  const text = `${active} more to do, ${finished} done`;
 
-  render() {
-    const { active, finished } = this.props;
-    const text = `${active} more to do, ${finished} done`;
+  return (
+    <div className="d-flex app-header">
+      <h1>Todo list</h1>
+      <span>{text}</span>
+    </div>
+  );
+};
 
-    return(
-      <div className="d-flex app-header">
-        <h1>Todo list</h1>
-        <span>{text}</span>
-      </div>
-    );
-  }
-}
+export default AppHeader;
